@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+  frontend:
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+      - 49153:49153
+    container_name: frontend
+    volumes:
+      - ./frontend:/src/app
+      - /frontend/node_modules
+    depends_on:
+      - backend
+    links:
+      - backend
+
+  backend:
+    build:
+      context: ./backend/
+      dockerfile: Dockerfile
+    ports:
+      - 4000:4000
+    container_name: backend
+    restart: always
+    volumes:
+      - ./backend:/src
+      - /backend/node_modules
+
+volumes:
+  data:
+    driver: local

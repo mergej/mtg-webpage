@@ -1,0 +1,27 @@
+<div class="row">
+    <span *ngIf="!isFiltered" class=spacer></span>
+    <button mat-icon-button routerLink="/home">
+        <mat-icon>home</mat-icon>
+    </button>
+
+    <mat-paginator #top *ngIf="!isFiltered" [length]="length"
+                  [pageSize]="pageSize"
+                  [pageIndex]="index"
+                  aria-label="Select page"
+                  (page)="onPageChange($event)">
+    </mat-paginator>
+</div>
+
+<div class="flex-row-center gallery">
+    <div *ngFor="let card of cards" class="card">
+        <app-image-spinner [img]="getImageUrl(card.multiverseId)" (click)="goToCardDetail(card.id)"></app-image-spinner>
+    </div>
+</div>
+
+<mat-paginator #bottom *ngIf="!isFiltered" [length]="length"
+              [pageSize]="pageSize"
+              [pageIndex]="index"
+              aria-label="Select page"
+              (page)="onPageChange($event)">
+</mat-paginator>
+

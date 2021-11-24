@@ -1,0 +1,9 @@
+.not-found {
+  height: 100%;
+  width: 100%;
+  font-size: 400px;
+}
+
+mat-icon {
+  transform: scaleX(-1);
+}

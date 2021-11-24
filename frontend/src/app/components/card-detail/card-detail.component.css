@@ -1,0 +1,38 @@
+.home-btn-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
+
+.image {
+  min-width: 200px;
+  max-width: 250px;
+  margin: 0 2rem;
+}
+
+.info {
+  min-width: 200px;
+  margin: 0 4rem;
+}
+
+.mirror-y {
+  transform: scaleX(-1);
+}
+
+img {
+  border-radius: 14px;
+}
+
+button {
+  margin: 0 2rem;
+}

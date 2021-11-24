@@ -1,0 +1,42 @@
+<div class="mtg">
+    <mat-form-field class="form-field" appearance="outline" >
+        <mat-label>Magic the Gathering</mat-label>
+
+        <mat-hint *ngIf="isArtist">
+            Search by Artist
+        </mat-hint>
+        <mat-hint *ngIf="!isArtist">
+            Search by Name
+        </mat-hint>
+        <mat-hint align="end" *ngIf="myControl.value != '' && containsNumber(myControl.value)" style="color: #f44336;">
+            The name cannot contain numeric characters!
+        </mat-hint>
+
+        <input matInput type="text" class="test" [matAutocomplete]="auto" [formControl]="myControl">
+
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let card of filteredOptions | async" [value]="isArtist ? card.artist : card.name">
+                <img aria-hidden [src]="getImageUrl(card.multiverseId)" height="25" class="search-img">
+                <span *ngIf="isArtist" class="search-artist-name">{{ card.artist }}</span>
+                <small *ngIf="isArtist">{{ card.name }}</small>
+                <span *ngIf="!isArtist">{{ card.name }}</span>
+            </mat-option>
+        </mat-autocomplete>
+
+        <button *ngIf="myControl.value" matSuffix mat-icon-button (click)="myControl.reset()">
+            <mat-icon>close</mat-icon>
+        </button>
+
+        <button mat-icon-button matSuffix (click)="search()">
+            <mat-icon>search</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <div class="slider">
+        <mat-slide-toggle [(ngModel)]="isArtist"></mat-slide-toggle>
+    </div>
+
+    <button mat-raised-button matSuffix routerLink="/cards" color="primary" class="show-all-btn">
+        Show all Cards
+    </button>
+</div>

@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  font-size: 18px;
+  padding: 0 3rem;
+  background-color: transparent;
+}
+
+img {
+  max-width: 300px;
+  padding-top: 4rem;
+  z-index: 3;
+}

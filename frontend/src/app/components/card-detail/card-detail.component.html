@@ -1,0 +1,76 @@
+<div class="home-btn-row">
+    <button mat-icon-button routerLink="/home">
+        <mat-icon>home</mat-icon>
+    </button>
+
+    <button mat-icon-button (click)="goBack()">
+      <mat-icon class="mirror-y">shortcut</mat-icon>
+  </button>
+</div>
+
+<div class="card-info">
+    <app-image-spinner [img]="imageUrl" class="image"></app-image-spinner>
+
+    <mat-accordion class="info">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Relevant
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Name: {{ card?.name }}</p>
+            <p>Artist: {{ card?.artist }}</p>
+            <p>Rarity: {{ card?.rarity }}</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Stats
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Number: {{ card?.number }}</p>
+            <p>Power: {{ card?.power }}</p>
+            <p>Toughness: {{ card?.toughness }}</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Text
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>flavorText: {{ card?.flavorText }}</p>
+            <p>Text: {{ card?.text }}</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Identifier
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Id: {{ card?.id }}</p>
+            <p>multiverseId: {{ card?.multiverseId }}</p>
+            <p>edhrecRank: {{ card?.edhrecRank }}</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Mana
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Value: {{ card?.manaValue }}</p>
+            <p>Cost: {{ card?.manaCost }}</p>
+            <p>Converted Cost: {{ card?.convertedManaCost }}</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Types
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Type: {{ card?.type }}</p>
+            <p>Types: {{ card?.types }}</p>
+            <p>Subtypes: {{ card?.subtypes}}</p>
+            <p>Supertypes: {{ card?.supertypes }}</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
