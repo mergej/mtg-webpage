@@ -29,7 +29,7 @@ export class MtgComponent implements OnInit {
 
   public getImageUrl(multiverseId: string): string {
     if (multiverseId === "") {
-      // Deckmaster is uses as Placeholder for Cards with not image
+      // Deckmaster is uses as Placeholder for Cards with no image/multiverseId
       return `http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=0&type=card`;
     }
     return `http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=${multiverseId}&type=card`;

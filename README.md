@@ -1,2 +1,4 @@
-# Magic the Gathering Database Webpage
-The front- and backend for the Big Data Project.
+# Magic the Gathering Database
+
+## Webpage
+The Front- and Backend for the [Big Data Project](https://github.com/mergej/big-data-mtg).
