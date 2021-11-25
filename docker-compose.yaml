@@ -11,7 +11,7 @@ services:
     container_name: frontend
     volumes:
       - ./frontend:/src/app
-      - /frontend/node_modules
+      - /src/app/node_modules
     depends_on:
       - backend
     links:
@@ -27,7 +27,7 @@ services:
     restart: always
     volumes:
       - ./backend:/src
-      - /backend/node_modules
+      - /app/node_modules
 
 volumes:
   data:
